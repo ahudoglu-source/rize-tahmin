@@ -72,3 +72,26 @@ df_puan = pd.DataFrame(puan_verisi)
 st.table(df_puan.set_index('Sıra'))
 
 st.caption("Not: Veriler 1 Şubat 2026 tarihindeki resmi TFF tablosundan simüle edilmiştir.")
+# --- HABER BÜLTENİ VE SON DAKİKA ---
+st.divider()
+st.subheader("📰 Rizespor'dan Son Dakika Haberleri")
+
+# 1 Şubat 2026 Güncel Haberleri
+haberler = [
+    {"başlık": "🚀 Transfer Hareketliliği", "detay": "Rizespor, transfer döneminin son saatlerinde yeni bir kanat oyuncusu ile el sıkıştı!"},
+    {"başlık": "🏥 Sakatlık Raporu", "detay": "Dal Varesanovic bireysel antrenmanlara başladı, Galatasaray maçına yetiştirilmesi bekleniyor."},
+    {"başlık": "🏟️ Altyapı Atılımı", "detay": "Rizespor akademisinden 3 genç yetenek, A takımla antrenmanlara dahil edildi."}
+]
+
+# Haberleri yan yana kartlar şeklinde gösterelim
+h1, h2, h3 = st.columns(3)
+
+with h1:
+    st.info(f"**{haberler[0]['başlık']}**\n\n{haberler[0]['detay']}")
+with h2:
+    st.warning(f"**{haberler[1]['başlık']}**\n\n{haberler[1]['detay']}")
+with h3:
+    st.success(f"**{haberler[2]['başlık']}**\n\n{haberler[2]['detay']}")
+
+st.write("---")
+st.caption("🔥 _Uygulama 1 Şubat 2026 tarihinde Rize için özel olarak güncellenmiştir._")
