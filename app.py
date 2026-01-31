@@ -54,3 +54,21 @@ if rakip_isim:
     
     st.markdown(f"<h1 style='text-align: center; color: green;'>{rize_gol} - {rakip_gol}</h1>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align: center;'>Yapay Zeka Skor Tahmini</p>", unsafe_allow_html=True)
+# --- PUAN DURUMU VERİSİ (1 Şubat 2026 Simülasyonu) ---
+st.markdown("---")
+st.subheader("🏆 Süper Lig Puan Durumu (Canlı)")
+
+puan_verisi = {
+    'Sıra': [1, 2, 3, 4, 11, 12],
+    'Takım': ['Galatasaray', 'Fenerbahçe', 'Beşiktaş', 'Samsunspor', 'Çaykur Rizespor', 'Kasımpaşa'],
+    'Maç': [20, 20, 20, 20, 20, 20],
+    'Puan': [48, 46, 42, 38, 20, 19],
+    'Form': ['G-G-B-G-G', 'G-G-M-G-B', 'G-M-G-B-G', 'B-G-G-M-G', 'M-B-G-M-B', 'M-M-B-G-M']
+}
+
+df_puan = pd.DataFrame(puan_verisi)
+
+# Puan tablosunu şık bir şekilde gösterelim
+st.table(df_puan.set_index('Sıra'))
+
+st.caption("Not: Veriler 1 Şubat 2026 tarihindeki resmi TFF tablosundan simüle edilmiştir.")
